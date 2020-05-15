@@ -143,7 +143,7 @@ public:
 
 	MyVector(const MyVector& copy)
     {
-        ValueType* newData = new ValueType[copy._size];
+        ValueType* newData = new ValueType[copy._capacity];
         for (int i = 0; i < copy._size; i++)
         {
             newData[i] = copy._data[i];
@@ -198,9 +198,13 @@ public:
 
 	// доступ к элементу, 
 	// должен работать за O(1)
-	ValueType& operator[](const size_t i) const
+	ValueType& operator[](const size_t i)
     {
         return this->_data[i];
+    }
+    ValueType& operator[](const size_t i) const
+    {
+        return const_cast<ValueType>(this->_data[i]);
     }
 
 	// добавить в конец,
