@@ -2,8 +2,6 @@
 // Created by trykr on 29.04.2020.
 //
 
-#ifndef DATASTRUCTURES_SHUNTINGYARD_H
-#define DATASTRUCTURES_SHUNTINGYARD_H
 #pragma once
 #include <string>
 #include <iostream>
@@ -29,4 +27,4 @@ public:
     Queue<Token>& getQueue();
 
 };
-#endif //UNILABS_SHUNTINGYARD_H
+

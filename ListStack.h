@@ -1,9 +1,3 @@
-//
-// Created by trykr on 25.04.2020.
-//
-
-#ifndef DATASTRUCTURES_LISTSTACK_H
-#define DATASTRUCTURES_LISTSTACK_H
 #pragma once
 
 #include "StackImplementation.h"
@@ -18,39 +12,51 @@ template<class ValueType>
 class ListStack :  LinkedList<ValueType>, public StackImplementation<ValueType>
 {
 public:
-    ListStack(const ValueType* valueArray, size_t arraySize)
-    {
-        for (int i = 0; i < arraySize; i++)
-            push(valueArray[i]);
-    }
-    ListStack()
-    {
-        this->_size = 0;
-    }
+    ListStack(const ValueType* valueArray, size_t arraySize);
+    ListStack();
     ~ListStack() override
     {
 
     }
-    void push(const ValueType &value) override
-    {
-        this->push(value);
-    }
-    void pop() override
-    {
-        this->removeBack();
-    }
-    ValueType& top() const override
-    {
-        return this->_lastNode->value;
-    }
-    size_t size() const
-    {
-        return this->_size;
-    }
-    bool isEmpty() const override
-    {
-        return this->size()== 0;
-    }
+    void push(const ValueType &value) override;
+    void pop() override;
+    ValueType& top() const override;
+    size_t size() const;
+    bool isEmpty() const override;
 };
-
-#endif //DATASTRUCTURES_LISTSTACK_H
+template<class ValueType>
+ListStack<ValueType>::ListStack(const ValueType* valueArray, size_t arraySize)
+{
+    for (int i = 0; i < arraySize; i++)
+        push(valueArray[i]);
+}
+template<class ValueType>
+ListStack<ValueType>::ListStack()
+{
+    this->_size = 0;
+}
+template<class ValueType>
+void ListStack<ValueType>::push(const ValueType &value)
+{
+    this->push(value);
+}
+template<class ValueType>
+void ListStack<ValueType>::pop()
+{
+    this->removeBack();
+}
+template<class ValueType>
+ValueType& ListStack<ValueType>::top() const
+{
+    return this->_lastNode->value;
+}
+template<class ValueType>
+size_t ListStack<ValueType>::size() const
+{
+    return this->_size;
+}
+template<class ValueType>
+bool ListStack<ValueType>::isEmpty() const
+{
+    return this->size()== 0;
+}

@@ -2,8 +2,6 @@
 // Created by trykr on 25.04.2020.
 //
 
-#ifndef DATASTRUCTURES_STACKIMPLEMENTATION_H
-#define DATASTRUCTURES_STACKIMPLEMENTATION_H
 #pragma once
 #include <cstdio>
 // приходится тянуть ValueType во все места,
@@ -26,4 +24,4 @@ public:
     // виртуальный деструктор
     virtual ~StackImplementation() {};
 };
-#endif //DATASTRUCTURES_STACKIMPLEMENTATION_H
+

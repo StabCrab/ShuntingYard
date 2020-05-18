@@ -2,8 +2,6 @@
 // Created by trykr on 01.05.2020.
 //
 
-#ifndef DATASTRUCTURES_QUEUEIMPLEMENTATION_H
-#define DATASTRUCTURES_QUEUEIMPLEMENTATION_H
 #pragma once
 #include <cstdio>
 
@@ -24,4 +22,3 @@ public:
     virtual ~QueueImplementation() {};
 };
 
-#endif //DATASTRUCTURES_QUEUEIMPLEMENTATION_H
