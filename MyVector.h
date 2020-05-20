@@ -96,7 +96,7 @@ public:
 	const Iterator cend();
 	ValueType getValue(Iterator i);
 	void setValue(Iterator i, ValueType value);
-    void sortedSquares(SortedStrategy strategy);
+    MyVector<ValueType> sortedSquares(SortedStrategy strategy);
 
 protected:
     ValueType* _data;
@@ -502,9 +502,9 @@ void MyVector<ValueType> :: setValue(Iterator i, ValueType value)
 }
 
 template<class ValueType>
-void MyVector<ValueType>::sortedSquares(SortedStrategy strategy)
+MyVector<ValueType> MyVector<ValueType>::sortedSquares(SortedStrategy strategy)
 {
-    ValueType* vec  = new ValueType[this->_size];
+    auto* vec  = new MyVector<ValueType>[this->_size];
     if (strategy == SortedStrategy::Descending)
     {
         int i = 0;
@@ -540,7 +540,6 @@ void MyVector<ValueType>::sortedSquares(SortedStrategy strategy)
     }
     else
     {
-
         int i = 0;
         int j = this->size() - 1;
         int k = this->size() - 1;
@@ -574,6 +573,5 @@ void MyVector<ValueType>::sortedSquares(SortedStrategy strategy)
             k--;
         }
     }
-    delete[] this->_data;
-    this->_data = vec;
+    return vec;
 }
